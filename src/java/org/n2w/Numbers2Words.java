@@ -1,5 +1,7 @@
 package org.n2w;
 
+import org.apache.commons.lang3.ArrayUtils;
+
 import java.util.Objects;
 
 public class Numbers2Words {
@@ -46,10 +48,7 @@ public class Numbers2Words {
           .concat(DICTIONARY.getOnes(tokens[ONES]));
     }
     if (Objects.isNull(tokens[TENS])) {
-      if (L0.equals(number)) {
-        return DICTIONARY.getOnes(L0);
-      }
-      return DICTIONARY.getOnes(tokens[ONES]);
+      return Ones.toWords(ArrayUtils.subarray(tokens, 0, 1));
     }
     return null;
   }
