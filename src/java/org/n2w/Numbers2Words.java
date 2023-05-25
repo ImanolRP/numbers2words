@@ -4,11 +4,9 @@ import java.util.Objects;
 
 public class Numbers2Words {
 
+  private static final long MINIMAL_NUMBER = 0L;
+
   public static String toWords(Long number) {
-
-    final long MINIMAL_NUMBER = 0L;
-    final String SPACE = " ";
-
 
     if (Objects.isNull(number)) {
       throw new NullPointerException();
@@ -19,7 +17,6 @@ public class Numbers2Words {
     }
 
     Long[] tokens = tokenize(number, 1);
-    String words = "";
 
     return Tens.toWords(tokens);
   }

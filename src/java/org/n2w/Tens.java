@@ -1,7 +1,5 @@
 package org.n2w;
 
-import org.apache.commons.lang3.ArrayUtils;
-
 import java.util.HashMap;
 import java.util.Objects;
 
@@ -61,7 +59,7 @@ public class Tens {
     final int TENS_IDX = 1;
 
     if (Objects.isNull(tokens[TENS_IDX])) {
-      return Units.toWords(ArrayUtils.subarray(tokens, 0, 1));
+      return Units.toWords(tokens);
     }
     if (L1.equals(tokens[TENS_IDX])) {
       return teensDictionary.get(tokens[UNIT_IDX]);
@@ -77,12 +75,12 @@ public class Tens {
         return twentiesDictionary.get(tokens[UNIT_IDX]);
       }
       return twentiesDictionary.get(-1L)
-          .concat(Units.toWords(ArrayUtils.subarray(tokens, 0, 1)));
+          .concat(Units.toWords(tokens));
     }
     if (L0.equals(tokens[UNIT_IDX])) {
       return tensDictionary.get(tokens[TENS_IDX]);
     }
     return tensDictionary.get(tokens[TENS_IDX]).concat(SEPARATOR)
-        .concat(Units.toWords(ArrayUtils.subarray(tokens, 0, 1)));
+        .concat(Units.toWords(tokens));
   }
 }

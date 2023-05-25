@@ -5,6 +5,8 @@ import java.util.Objects;
 
 public class Units {
 
+  private static final String L0 = "cero";
+
   private static final HashMap<Long, String> dictionary =
       new HashMap<Long, String>() {
         private static final long serialVersionUID = 6133546176391439970L;
@@ -23,11 +25,10 @@ public class Units {
       };
 
   public static String toWords(Long[] token) {
-    final Long L0 = 0L;
     final int UNIT_IDX = 0;
 
     if (Objects.isNull(token[0])) {
-      return dictionary.get(L0);
+      return L0;
     }
     return dictionary.get(token[UNIT_IDX]);
   }
