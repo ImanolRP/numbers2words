@@ -24,6 +24,10 @@ public class LanguajeExceptionProviders implements ArgumentsProvider {
           put(17L, "diecisiete");
           put(18L, "dieciocho");
           put(19L, "diecinueve");
+
+          put(20L, "veinte");
+          put(22L, "veintidós");
+          put(23L, "veintitrés");
         }
       };
 

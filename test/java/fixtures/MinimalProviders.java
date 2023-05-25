@@ -21,6 +21,8 @@ public class MinimalProviders implements ArgumentsProvider {
           put(10L, "diez");
           put(11L, "once");
           put(19L, "diecinueve");
+          put(20L, "veinte");
+          put(21L, "veintiuno");
         }
       };
 
