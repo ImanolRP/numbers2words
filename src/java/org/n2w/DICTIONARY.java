@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public enum DICTIONARY {
-  ONES(new HashMap<Long, String>() {
+  UNITS(new HashMap<Long, String>() {
     private static final long serialVersionUID = 6133546176391439970L;
     {
       put(0L, "cero");
@@ -48,8 +48,8 @@ public enum DICTIONARY {
     this.traductions = traductions;
   }
 
-  public static String getOnes(Long number) {
-    return ONES.getTraductions().get(number);
+  public static String getUnits(Long number) {
+    return UNITS.getTraductions().get(number);
   }
 
   public static String getTeens(Long number) {

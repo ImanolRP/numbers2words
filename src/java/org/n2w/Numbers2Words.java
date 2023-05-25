@@ -17,7 +17,7 @@ public class Numbers2Words {
     final Long L2 = 2L;
     final Long L3 = 3L;
 
-    final int ONES = 0;
+    final int UNIT_IDX = 0;
     final int TENS = 1;
 
     if (Objects.isNull(number)) {
@@ -32,23 +32,23 @@ public class Numbers2Words {
     String words = "";
 
     if (L1.equals(tokens[TENS])) {
-      return DICTIONARY.getTeens(tokens[ONES]);
+      return DICTIONARY.getTeens(tokens[UNIT_IDX]);
     }
     if (L2.equals(tokens[TENS])) {
-      if (L0.equals(tokens[ONES])) {
-        return DICTIONARY.getTwenties(tokens[ONES]);
+      if (L0.equals(tokens[UNIT_IDX])) {
+        return DICTIONARY.getTwenties(tokens[UNIT_IDX]);
       }
-      if (L2.equals(tokens[ONES])) {
-        return DICTIONARY.getTwenties(tokens[ONES]);
+      if (L2.equals(tokens[UNIT_IDX])) {
+        return DICTIONARY.getTwenties(tokens[UNIT_IDX]);
       }
-      if (L3.equals(tokens[ONES])) {
-        return DICTIONARY.getTwenties(tokens[ONES]);
+      if (L3.equals(tokens[UNIT_IDX])) {
+        return DICTIONARY.getTwenties(tokens[UNIT_IDX]);
       }
       return DICTIONARY.getTwenties(-1L)
-          .concat(DICTIONARY.getOnes(tokens[ONES]));
+          .concat(DICTIONARY.getUnits(tokens[UNIT_IDX]));
     }
     if (Objects.isNull(tokens[TENS])) {
-      return Ones.toWords(ArrayUtils.subarray(tokens, 0, 1));
+      return Units.toWords(ArrayUtils.subarray(tokens, 0, 1));
     }
     return null;
   }

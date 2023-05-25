@@ -2,16 +2,16 @@ package org.n2w;
 
 import java.util.Objects;
 
-public class Ones {
+public class Units {
 
   public static String toWords(Long[] token) {
     final Long L0 = 0L;
-    final int ONES = 0;
+    final int UNIT_IDX = 0;
 
     if (Objects.isNull(token[0])) {
-      return DICTIONARY.getOnes(L0);
+      return DICTIONARY.getUnits(L0);
     }
-    return DICTIONARY.getOnes(token[ONES]);
+    return DICTIONARY.getUnits(token[UNIT_IDX]);
   }
 
 }
