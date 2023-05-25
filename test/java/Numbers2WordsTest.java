@@ -18,6 +18,17 @@ class Numbers2WordsTest {
     Assertions.assertEquals(NullPointerException.class, exception.getClass());
   }
 
+  @Test
+  void should_throw_IllegalArgumentException_when_recives_negative() {
+    Exception exception =
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
+          Numbers2Words.toWords(-1L);
+        });
+
+    Assertions.assertEquals(IllegalArgumentException.class,
+        exception.getClass());
+  }
+
   @ParameterizedTest(name = "Number \"{0}\" toWords equivalence is \"{1}\"")
   @ArgumentsSource(MinimalProviders.class)
   void should_return_number_in_words(Long number, String words) {

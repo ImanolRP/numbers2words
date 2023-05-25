@@ -7,8 +7,15 @@ import java.util.Objects;
 public class Numbers2Words {
 
   public static String toWords(Long number) {
+
+    final long MINIMAL_NUMBER = 0L;
+
     if (Objects.isNull(number)) {
       throw new NullPointerException();
+    }
+
+    if (MINIMAL_NUMBER > number) {
+      throw new IllegalArgumentException();
     }
 
     if (number >= 10L) {
