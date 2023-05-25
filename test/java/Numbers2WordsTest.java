@@ -9,7 +9,7 @@ import fixtures.MinimalProviders;
 class Numbers2WordsTest {
 
   @Test
-  void should_throw_NullPointerException() {
+  void should_throw_NullPointerException_when_recives_null() {
     Exception exception =
         Assertions.assertThrows(NullPointerException.class, () -> {
           Numbers2Words.toWords(null);
