@@ -2,10 +2,15 @@ package org.n2w;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class Numbers2Words {
 
   public static String toWords(Long number) {
+    if (Objects.isNull(number)) {
+      throw new NullPointerException();
+    }
+
     if (number >= 10L) {
       return DICTIONARY.getTeens(number);
     }
