@@ -14,6 +14,7 @@ public class MinimalProviders implements ArgumentsProvider {
         private static final long serialVersionUID = 1037291664336460794L;
         {
           put(0L, "cero");
+          put(1L, "uno");
         }
       };
 
