@@ -5,6 +5,7 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.ArgumentsProvider;
 
 import java.util.HashMap;
+import java.util.Map;
 import java.util.stream.Stream;
 
 public class MinimalProviders implements ArgumentsProvider {
@@ -27,6 +28,7 @@ public class MinimalProviders implements ArgumentsProvider {
   public Stream<? extends Arguments> provideArguments(
       ExtensionContext extensionContext) {
     return provider.entrySet().stream()
+        .sorted(Map.Entry.comparingByKey())
         .map((entry) -> Arguments.of(entry.getKey(), entry.getValue()));
   }
 
