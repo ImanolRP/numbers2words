@@ -7,6 +7,22 @@ import java.util.Objects;
 
 public class Tens {
 
+  private static final String SEPARATOR = " y ";
+
+  private static final HashMap<Long, String> tensDictionary =
+      new HashMap<Long, String>() {
+        private static final long serialVersionUID = 7198783434212592957L;
+        {
+          put(3L, "treinta");
+          put(4L, "cuarenta");
+          put(5L, "cincuenta");
+          put(6L, "sesenta");
+          put(7L, "setenta");
+          put(8L, "ochenta");
+          put(9L, "noventa");
+        }
+      };
+
   private static final HashMap<Long, String> teensDictionary =
       new HashMap<Long, String>() {
         private static final long serialVersionUID = 7198783434212592957L;
@@ -44,6 +60,9 @@ public class Tens {
     final int UNIT_IDX = 0;
     final int TENS_IDX = 1;
 
+    if (Objects.isNull(tokens[TENS_IDX])) {
+      return Units.toWords(ArrayUtils.subarray(tokens, 0, 1));
+    }
     if (L1.equals(tokens[TENS_IDX])) {
       return teensDictionary.get(tokens[UNIT_IDX]);
     }
@@ -60,9 +79,10 @@ public class Tens {
       return twentiesDictionary.get(-1L)
           .concat(Units.toWords(ArrayUtils.subarray(tokens, 0, 1)));
     }
-    if (Objects.isNull(tokens[TENS_IDX])) {
-      return Units.toWords(ArrayUtils.subarray(tokens, 0, 1));
+    if (L0.equals(tokens[UNIT_IDX])) {
+      return tensDictionary.get(tokens[TENS_IDX]);
     }
-    return null;
+    return tensDictionary.get(tokens[TENS_IDX]).concat(SEPARATOR)
+        .concat(Units.toWords(ArrayUtils.subarray(tokens, 0, 1)));
   }
 }

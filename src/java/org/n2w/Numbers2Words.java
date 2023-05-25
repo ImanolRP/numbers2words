@@ -8,7 +8,7 @@ public class Numbers2Words {
 
     final long MINIMAL_NUMBER = 0L;
     final String SPACE = " ";
-    final String SEPARATOR = " y ";
+
 
     if (Objects.isNull(number)) {
       throw new NullPointerException();
