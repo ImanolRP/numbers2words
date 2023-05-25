@@ -45,7 +45,7 @@ public class Numbers2Words {
         return DICTIONARY.getTwenties(tokens[UNIT_IDX]);
       }
       return DICTIONARY.getTwenties(-1L)
-          .concat(DICTIONARY.getUnits(tokens[UNIT_IDX]));
+          .concat(Units.toWords(ArrayUtils.subarray(tokens, 0, 1)));
     }
     if (Objects.isNull(tokens[TENS])) {
       return Units.toWords(ArrayUtils.subarray(tokens, 0, 1));
