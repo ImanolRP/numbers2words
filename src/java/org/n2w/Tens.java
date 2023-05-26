@@ -1,7 +1,6 @@
 package org.n2w;
 
 import java.util.HashMap;
-import java.util.Objects;
 
 public class Tens {
 
@@ -49,35 +48,30 @@ public class Tens {
         }
       };
 
-  public static String toWords(Long[] tokens) {
-    final Long L0 = 0L;
-    final Long L1 = 1L;
-    final Long L2 = 2L;
-    final Long L3 = 3L;
-
+  public static String toWords(long[] tokens) {
     final int UNIT_IDX = 0;
     final int TENS_IDX = 1;
 
-    if (Objects.isNull(tokens[TENS_IDX])) {
+    if (0L == tokens[TENS_IDX]) {
       return Units.toWords(tokens);
     }
-    if (L1.equals(tokens[TENS_IDX])) {
+    if (1L == tokens[TENS_IDX]) {
       return teensDictionary.get(tokens[UNIT_IDX]);
     }
-    if (L2.equals(tokens[TENS_IDX])) {
-      if (L0.equals(tokens[UNIT_IDX])) {
+    if (2L == tokens[TENS_IDX]) {
+      if (0L == tokens[UNIT_IDX]) {
         return twentiesDictionary.get(tokens[UNIT_IDX]);
       }
-      if (L2.equals(tokens[UNIT_IDX])) {
+      if (2L == tokens[UNIT_IDX]) {
         return twentiesDictionary.get(tokens[UNIT_IDX]);
       }
-      if (L3.equals(tokens[UNIT_IDX])) {
+      if (3L == tokens[UNIT_IDX]) {
         return twentiesDictionary.get(tokens[UNIT_IDX]);
       }
       return twentiesDictionary.get(-1L)
           .concat(Units.toWords(tokens));
     }
-    if (L0.equals(tokens[UNIT_IDX])) {
+    if (0L == tokens[UNIT_IDX]) {
       return tensDictionary.get(tokens[TENS_IDX]);
     }
     return tensDictionary.get(tokens[TENS_IDX]).concat(SEPARATOR)

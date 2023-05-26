@@ -16,16 +16,16 @@ public class Numbers2Words {
       throw new IllegalArgumentException();
     }
 
-    Long[] tokens = tokenize(number, 1);
+    long[] tokens = tokenize(number, 1);
 
     return Tens.toWords(tokens);
   }
 
   private Numbers2Words() {}
 
-  private static Long[] tokenize(Long number, int tokenLength) {
+  private static long[] tokenize(Long number, int tokenLength) {
     int index = 0;
-    Long[] tokens = new Long[3];
+    long[] tokens = new long[3];
     int base = (int) Math.pow(10, tokenLength);
     while (number > 0) {
       tokens[index] = (number % base);

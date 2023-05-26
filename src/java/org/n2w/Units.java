@@ -1,7 +1,6 @@
 package org.n2w;
 
 import java.util.HashMap;
-import java.util.Objects;
 
 public class Units {
 
@@ -24,10 +23,10 @@ public class Units {
         }
       };
 
-  public static String toWords(Long[] token) {
+  public static String toWords(long[] token) {
     final int UNIT_IDX = 0;
 
-    if (Objects.isNull(token[0])) {
+    if (token[0] == 0L) {
       return L0;
     }
     return dictionary.get(token[UNIT_IDX]);
