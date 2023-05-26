@@ -8,6 +8,8 @@ public class Hundreds {
   private static final int TENS_IDX = 1;
   private static final int HUNDREDS_IDX = 2;
 
+  private static final String L100 = "cien";
+
   private static final String SPACE = " ";
 
   private static final HashMap<Long, String> dictionary =
@@ -28,8 +30,6 @@ public class Hundreds {
 
   public static String toWords(long[] tokens) {
 
-
-    final String L100 = "cien";
 
     if (0L == tokens[HUNDREDS_IDX]) {
       return Tens.toWords(tokens);

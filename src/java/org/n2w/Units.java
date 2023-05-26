@@ -4,6 +4,8 @@ import java.util.HashMap;
 
 public class Units {
 
+  private static final int UNIT_IDX = 0;
+
   private static final String L0 = "cero";
 
   private static final HashMap<Long, String> dictionary =
@@ -24,8 +26,6 @@ public class Units {
       };
 
   public static String toWords(long[] token) {
-    final int UNIT_IDX = 0;
-
     if (token[0] == 0L) {
       return L0;
     }

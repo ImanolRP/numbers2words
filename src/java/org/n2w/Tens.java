@@ -4,11 +4,14 @@ import java.util.HashMap;
 
 public class Tens {
 
+  private static final int UNIT_IDX = 0;
+  private static final int TENS_IDX = 1;
+
   private static final String SEPARATOR = " y ";
 
   private static final HashMap<Long, String> tensDictionary =
       new HashMap<Long, String>() {
-        private static final long serialVersionUID = 7198783434212592957L;
+        private static final long serialVersionUID = 878914469088093082L;
         {
           put(3L, "treinta");
           put(4L, "cuarenta");
@@ -22,7 +25,7 @@ public class Tens {
 
   private static final HashMap<Long, String> teensDictionary =
       new HashMap<Long, String>() {
-        private static final long serialVersionUID = 7198783434212592957L;
+        private static final long serialVersionUID = 4349990935586367340L;
         {
           put(0L, "diez");
           put(1L, "once");
@@ -49,9 +52,6 @@ public class Tens {
       };
 
   public static String toWords(long[] tokens) {
-    final int UNIT_IDX = 0;
-    final int TENS_IDX = 1;
-
     if (0L == tokens[TENS_IDX]) {
       return Units.toWords(tokens);
     }
