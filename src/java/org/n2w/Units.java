@@ -25,7 +25,7 @@ public class Units {
         }
       };
 
-  public static String toWords(long[] token) {
+  public static String get(long[] token) {
     if (token[0] == 0L) {
       return L0;
     }

@@ -51,9 +51,9 @@ public class Tens {
         }
       };
 
-  public static String toWords(long[] tokens) {
+  public static String get(long[] tokens) {
     if (0L == tokens[TENS_IDX]) {
-      return Units.toWords(tokens);
+      return Units.get(tokens);
     }
     if (1L == tokens[TENS_IDX]) {
       return teensDictionary.get(tokens[UNIT_IDX]);
@@ -69,12 +69,12 @@ public class Tens {
         return twentiesDictionary.get(tokens[UNIT_IDX]);
       }
       return twentiesDictionary.get(-1L)
-          .concat(Units.toWords(tokens));
+          .concat(Units.get(tokens));
     }
     if (0L == tokens[UNIT_IDX]) {
       return tensDictionary.get(tokens[TENS_IDX]);
     }
     return tensDictionary.get(tokens[TENS_IDX]).concat(SEPARATOR)
-        .concat(Units.toWords(tokens));
+        .concat(Units.get(tokens));
   }
 }

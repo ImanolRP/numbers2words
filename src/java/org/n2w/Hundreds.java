@@ -28,11 +28,9 @@ public class Hundreds {
         }
       };
 
-  public static String toWords(long[] tokens) {
-
-
+  public static String get(long[] tokens) {
     if (0L == tokens[HUNDREDS_IDX]) {
-      return Tens.toWords(tokens);
+      return Tens.get(tokens);
     }
     if (1L == tokens[HUNDREDS_IDX] //
         && 0L == tokens[TENS_IDX] //
@@ -40,7 +38,7 @@ public class Hundreds {
       return L100;
     }
     return dictionary.get(tokens[HUNDREDS_IDX]).concat(SPACE)
-        .concat(Tens.toWords(tokens));
+        .concat(Tens.get(tokens));
   }
 
 }
