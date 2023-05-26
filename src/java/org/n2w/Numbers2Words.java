@@ -16,9 +16,7 @@ public class Numbers2Words {
       throw new IllegalArgumentException();
     }
 
-    long[] tokens = tokenize(number, 1);
-
-    return Hundreds.get(tokens);
+    return Thousands.get(number);
   }
 
   private Numbers2Words() {}
