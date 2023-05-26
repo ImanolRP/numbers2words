@@ -18,7 +18,7 @@ public class Numbers2Words {
 
     long[] tokens = tokenize(number, 1);
 
-    return Tens.toWords(tokens);
+    return Hundreds.toWords(tokens);
   }
 
   private Numbers2Words() {}
