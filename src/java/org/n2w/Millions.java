@@ -7,6 +7,7 @@ public class Millions {
 
   private static final String MILLION = "un millón";
   private static final String MILLIONS = "millones";
+  private static final String L21 = "veintiún";
 
   private static final String SPACE = " ";
 
@@ -24,11 +25,17 @@ public class Millions {
       }
       return MILLION.concat(SPACE).concat(Thousands.get(tokens[BASE_IDX]));
     }
-    if (0L == tokens[BASE_IDX]) {
-      return Thousands.get(tokens[MILLION_IDX]).concat(SPACE).concat(MILLIONS);
+
+    String words;
+    if (21L == tokens[MILLION_IDX]) {
+      words = L21.concat(SPACE).concat(MILLIONS);
+    } else {
+      words = Thousands.get(tokens[MILLION_IDX]).concat(SPACE).concat(MILLIONS);
     }
-    return Thousands.get(tokens[MILLION_IDX]).concat(SPACE).concat(MILLIONS)
-        .concat(SPACE).concat(Thousands.get(tokens[BASE_IDX]));
+    if (0L != tokens[BASE_IDX]) {
+      return words.concat(SPACE).concat(Thousands.get(tokens[BASE_IDX]));
+    }
+    return words;
   }
 
 }

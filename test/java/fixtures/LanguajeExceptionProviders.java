@@ -28,6 +28,8 @@ public class LanguajeExceptionProviders implements ArgumentsProvider {
           put(20L, "veinte");
           put(22L, "veintidós");
           put(23L, "veintitrés");
+          put(21000L, "veintiún mil");
+          put(21000000L, "veintiún millones");
         }
       };
 
