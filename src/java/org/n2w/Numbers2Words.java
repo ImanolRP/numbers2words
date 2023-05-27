@@ -6,6 +6,8 @@ public class Numbers2Words {
 
   private static final long MINIMAL_NUMBER = 0L;
 
+  private Numbers2Words() {}
+
   public static String toWords(Long number) {
 
     if (Objects.isNull(number)) {
@@ -17,20 +19,6 @@ public class Numbers2Words {
     }
 
     return Millions.get(number);
-  }
-
-  private Numbers2Words() {}
-
-  private static long[] tokenize(Long number, int tokenLength) {
-    int index = 0;
-    long[] tokens = new long[3];
-    int base = (int) Math.pow(10, tokenLength);
-    while (number > 0) {
-      tokens[index] = (number % base);
-      number = (number / base);
-      index++;
-    }
-    return tokens;
   }
 
 }
