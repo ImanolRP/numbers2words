@@ -4,8 +4,6 @@ import java.util.HashMap;
 
 public class Units {
 
-  private static final int UNIT_IDX = 0;
-
   private static final String L0 = "cero";
 
   private static final HashMap<Long, String> dictionary =
@@ -27,11 +25,11 @@ public class Units {
 
   private Units() {}
 
-  public static String get(long[] token) {
-    if (token[0] == 0L) {
+  public static String get(Long token) {
+    if (0L == token) {
       return L0;
     }
-    return dictionary.get(token[UNIT_IDX]);
+    return dictionary.get(token);
   }
 
 }

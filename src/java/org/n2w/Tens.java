@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 public class Tens {
 
-  private static final int UNIT_IDX = 0;
+  private static final int BASE_IDX = 0;
   private static final int TENS_IDX = 1;
 
   private static final String SEPARATOR = " y ";
@@ -57,28 +57,28 @@ public class Tens {
     long[] tokens = Tokenizer.get(number, 1);
 
     if (0L == tokens[TENS_IDX]) {
-      return Units.get(tokens);
+      return Units.get(tokens[BASE_IDX]);
     }
     if (1L == tokens[TENS_IDX]) {
-      return teensDictionary.get(tokens[UNIT_IDX]);
+      return teensDictionary.get(tokens[BASE_IDX]);
     }
     if (2L == tokens[TENS_IDX]) {
-      if (0L == tokens[UNIT_IDX]) {
-        return twentiesDictionary.get(tokens[UNIT_IDX]);
+      if (0L == tokens[BASE_IDX]) {
+        return twentiesDictionary.get(tokens[BASE_IDX]);
       }
-      if (2L == tokens[UNIT_IDX]) {
-        return twentiesDictionary.get(tokens[UNIT_IDX]);
+      if (2L == tokens[BASE_IDX]) {
+        return twentiesDictionary.get(tokens[BASE_IDX]);
       }
-      if (3L == tokens[UNIT_IDX]) {
-        return twentiesDictionary.get(tokens[UNIT_IDX]);
+      if (3L == tokens[BASE_IDX]) {
+        return twentiesDictionary.get(tokens[BASE_IDX]);
       }
       return twentiesDictionary.get(-1L)
-          .concat(Units.get(tokens));
+          .concat(Units.get(tokens[BASE_IDX]));
     }
-    if (0L == tokens[UNIT_IDX]) {
+    if (0L == tokens[BASE_IDX]) {
       return tensDictionary.get(tokens[TENS_IDX]);
     }
     return tensDictionary.get(tokens[TENS_IDX]).concat(SEPARATOR)
-        .concat(Units.get(tokens));
+        .concat(Units.get(tokens[BASE_IDX]));
   }
 }
