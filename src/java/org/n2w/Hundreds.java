@@ -4,7 +4,8 @@ import java.util.HashMap;
 
 public class Hundreds {
 
-  private static final int HUNDREDS_IDX = 2;
+  private static final int BASE_IDX = 0;
+  private static final int HUNDRED_IDX = 1;
 
   private static final String L100 = "cien";
 
@@ -29,16 +30,16 @@ public class Hundreds {
   private Hundreds() {}
 
   public static String get(Long number) {
-    long[] tokens = Tokenizer.get(number, 1);
+    long[] tokens = Tokenizer.get(number, 2);
 
-    if (0L == tokens[HUNDREDS_IDX]) {
-      return Tens.get(tokens);
+    if (0L == tokens[HUNDRED_IDX]) {
+      return Tens.get(tokens[BASE_IDX]);
     }
     if (100L == number) {
       return L100;
     }
-    return dictionary.get(tokens[HUNDREDS_IDX]).concat(SPACE)
-        .concat(Tens.get(tokens));
+    return dictionary.get(tokens[HUNDRED_IDX]).concat(SPACE)
+        .concat(Tens.get(tokens[BASE_IDX]));
   }
 
 }

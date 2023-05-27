@@ -53,7 +53,9 @@ public class Tens {
 
   private Tens() {}
 
-  public static String get(long[] tokens) {
+  public static String get(Long number) {
+    long[] tokens = Tokenizer.get(number, 1);
+
     if (0L == tokens[TENS_IDX]) {
       return Units.get(tokens);
     }
