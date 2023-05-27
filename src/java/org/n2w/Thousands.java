@@ -10,7 +10,7 @@ public class Thousands {
   private static final String SPACE = " ";
 
   public static String get(Long number) {
-    long[] tokens = tokenize(number, 3);
+    long[] tokens = Tokenizer.get(number, 3);
 
     if (1L == tokens[THOUSAND_IDX]) {
       if (0L == tokens[BASE_IDX]) {
@@ -26,18 +26,6 @@ public class Thousands {
     }
     return Hundreds.get(tokens[THOUSAND_IDX]).concat(SPACE).concat(THOUSAND)
         .concat(SPACE).concat(Hundreds.get(tokens[BASE_IDX]));
-  }
-
-  private static long[] tokenize(Long number, int tokenLength) {
-    int index = 0;
-    long[] tokens = new long[3];
-    int base = (int) Math.pow(10, tokenLength);
-    while (number > 0) {
-      tokens[index] = (number % base);
-      number = (number / base);
-      index++;
-    }
-    return tokens;
   }
 
 }

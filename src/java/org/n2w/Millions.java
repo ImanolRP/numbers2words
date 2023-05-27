@@ -11,7 +11,7 @@ public class Millions {
   private static final String SPACE = " ";
 
   public static String get(Long number) {
-    long[] tokens = tokenize(number, 6);
+    long[] tokens = Tokenizer.get(number, 6);
 
     if (0L == tokens[MILLION_IDX]) {
       return Thousands.get(tokens[BASE_IDX]);
@@ -27,18 +27,6 @@ public class Millions {
     }
     return Thousands.get(tokens[MILLION_IDX]).concat(SPACE).concat(MILLIONS)
         .concat(SPACE).concat(Thousands.get(tokens[BASE_IDX]));
-  }
-
-  private static long[] tokenize(Long number, int tokenLength) {
-    int index = 0;
-    long[] tokens = new long[3];
-    int base = (int) Math.pow(10, tokenLength);
-    while (number > 0) {
-      tokens[index] = (number % base);
-      number = (number / base);
-      index++;
-    }
-    return tokens;
   }
 
 }
