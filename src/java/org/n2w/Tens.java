@@ -63,22 +63,20 @@ public class Tens {
       return teensDictionary.get(tokens[BASE_IDX]);
     }
     if (2L == tokens[TENS_IDX]) {
-      if (0L == tokens[BASE_IDX]) {
-        return twentiesDictionary.get(tokens[BASE_IDX]);
-      }
-      if (2L == tokens[BASE_IDX]) {
-        return twentiesDictionary.get(tokens[BASE_IDX]);
-      }
-      if (3L == tokens[BASE_IDX]) {
+      if (0L == tokens[BASE_IDX] //
+          || 2L == tokens[BASE_IDX] //
+          || 3L == tokens[BASE_IDX]) {
         return twentiesDictionary.get(tokens[BASE_IDX]);
       }
       return twentiesDictionary.get(-1L)
           .concat(Units.get(tokens[BASE_IDX]));
     }
+
+    String words = tensDictionary.get(tokens[TENS_IDX]);
     if (0L == tokens[BASE_IDX]) {
-      return tensDictionary.get(tokens[TENS_IDX]);
+      return words;
     }
-    return tensDictionary.get(tokens[TENS_IDX]).concat(SEPARATOR)
+    return words.concat(SEPARATOR)
         .concat(Units.get(tokens[BASE_IDX]));
   }
 }
