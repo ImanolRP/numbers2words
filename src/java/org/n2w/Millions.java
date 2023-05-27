@@ -10,6 +10,8 @@ public class Millions {
 
   private static final String SPACE = " ";
 
+  private Millions() {}
+
   public static String get(Long number) {
     long[] tokens = Tokenizer.get(number, 6);
 

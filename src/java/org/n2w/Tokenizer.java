@@ -2,7 +2,7 @@ package org.n2w;
 
 public class Tokenizer {
 
-  public Tokenizer() {}
+  private Tokenizer() {}
 
   public static long[] get(Long number, int tokenLength) {
     int index = 0;

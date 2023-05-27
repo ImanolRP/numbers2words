@@ -51,6 +51,8 @@ public class Tens {
         }
       };
 
+  private Tens() {}
+
   public static String get(long[] tokens) {
     if (0L == tokens[TENS_IDX]) {
       return Units.get(tokens);

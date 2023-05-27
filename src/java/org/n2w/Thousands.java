@@ -9,6 +9,8 @@ public class Thousands {
 
   private static final String SPACE = " ";
 
+  private Thousands() {}
+
   public static String get(Long number) {
     long[] tokens = Tokenizer.get(number, 3);
 

@@ -28,6 +28,8 @@ public class Hundreds {
         }
       };
 
+  private Hundreds() {}
+
   public static String get(Long number) {
     long[] tokens = Tokenizer.get(number, 1);
 

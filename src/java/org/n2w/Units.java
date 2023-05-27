@@ -25,6 +25,8 @@ public class Units {
         }
       };
 
+  private Units() {}
+
   public static String get(long[] token) {
     if (token[0] == 0L) {
       return L0;
