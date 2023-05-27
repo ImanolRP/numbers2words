@@ -32,10 +32,10 @@ public class Millions {
     } else {
       words = Thousands.get(tokens[MILLION_IDX]).concat(SPACE).concat(MILLIONS);
     }
-    if (0L != tokens[BASE_IDX]) {
-      return words.concat(SPACE).concat(Thousands.get(tokens[BASE_IDX]));
+    if (0L == tokens[BASE_IDX]) {
+      return words;
     }
-    return words;
+    return words.concat(SPACE).concat(Thousands.get(tokens[BASE_IDX]));
   }
 
 }

@@ -31,10 +31,10 @@ public class Thousands {
     } else {
       words = Hundreds.get(tokens[THOUSAND_IDX]).concat(SPACE).concat(THOUSAND);
     }
-    if (0L != tokens[BASE_IDX]) {
-      return words.concat(SPACE).concat(Hundreds.get(tokens[BASE_IDX]));
+    if (0L == tokens[BASE_IDX]) {
+      return words;
     }
-    return words;
+    return words.concat(SPACE).concat(Hundreds.get(tokens[BASE_IDX]));
   }
 
 }
