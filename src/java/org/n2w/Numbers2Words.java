@@ -4,7 +4,8 @@ import java.util.Objects;
 
 public class Numbers2Words {
 
-  private static final long MINIMAL_NUMBER = 0L;
+  private static final long MIN_NUMBER = 0L;
+  private static final long MAX_NUMBER = 999999999L;
 
   private Numbers2Words() {}
 
@@ -14,7 +15,7 @@ public class Numbers2Words {
       throw new NullPointerException();
     }
 
-    if (MINIMAL_NUMBER > number) {
+    if (number < MIN_NUMBER || number > MAX_NUMBER) {
       throw new IllegalArgumentException();
     }
 

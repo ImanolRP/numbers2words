@@ -36,6 +36,17 @@ class Numbers2WordsTest {
         exception.getClass());
   }
 
+  @Test
+  void should_throw_IllegalArgumentException_when_number_higer_max_value() {
+    Exception exception =
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
+          Numbers2Words.toWords(1000000000L);
+        });
+
+    Assertions.assertEquals(IllegalArgumentException.class,
+        exception.getClass());
+  }
+
   @ParameterizedTest(name = PARAMETERIZED_TEST_MESSAGE)
   @ArgumentsSource(MinimalProviders.class)
   void should_return_number_in_words(Long number, String words) {
