@@ -4,8 +4,6 @@ import java.util.HashMap;
 
 public class Hundreds {
 
-  private static final int UNIT_IDX = 0;
-  private static final int TENS_IDX = 1;
   private static final int HUNDREDS_IDX = 2;
 
   private static final String L100 = "cien";
@@ -36,9 +34,7 @@ public class Hundreds {
     if (0L == tokens[HUNDREDS_IDX]) {
       return Tens.get(tokens);
     }
-    if (1L == tokens[HUNDREDS_IDX] //
-        && 0L == tokens[TENS_IDX] //
-        && 0L == tokens[UNIT_IDX]) {
+    if (100L == number) {
       return L100;
     }
     return dictionary.get(tokens[HUNDREDS_IDX]).concat(SPACE)
