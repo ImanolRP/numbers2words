@@ -49,6 +49,21 @@ public class MinimalProviders implements ArgumentsProvider {
           put(9011L, "nueve mil once");
           put(9021L, "nueve mil veintiuno");
           put(9999L, "nueve mil novecientos noventa y nueve");
+
+          put(1000000L, "un millón");
+          put(1000001L, "un millón uno");
+          put(1000011L, "un millón once");
+          put(1000021L, "un millón veintiuno");
+          put(1010000L, "un millón diez mil");
+          put(1010001L, "un millón diez mil uno");
+          put(1021001L, "un millón veintiún mil uno");
+          put(1110000L, "un millón ciento diez mil");
+          put(2000040L, "dos millones cuarenta");
+          put(10000000L, "diez millones");
+          put(11000000L, "once millones");
+          put(21000000L, "veintiún millones");
+          put(999999999L,
+              "novecientos noventa y nueve millones novecientos noventa y nueve mil novecientos noventa y nueve");
         }
       };
 

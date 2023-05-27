@@ -28,7 +28,9 @@ public class Hundreds {
         }
       };
 
-  public static String get(long[] tokens) {
+  public static String get(Long number) {
+    long[] tokens = tokenize(number, 1);
+
     if (0L == tokens[HUNDREDS_IDX]) {
       return Tens.get(tokens);
     }
@@ -39,6 +41,18 @@ public class Hundreds {
     }
     return dictionary.get(tokens[HUNDREDS_IDX]).concat(SPACE)
         .concat(Tens.get(tokens));
+  }
+
+  private static long[] tokenize(Long number, int tokenLength) {
+    int index = 0;
+    long[] tokens = new long[3];
+    int base = (int) Math.pow(10, tokenLength);
+    while (number > 0) {
+      tokens[index] = (number % base);
+      number = (number / base);
+      index++;
+    }
+    return tokens;
   }
 
 }

@@ -16,7 +16,7 @@ public class Numbers2Words {
       throw new IllegalArgumentException();
     }
 
-    return Thousands.get(number);
+    return Millions.get(number);
   }
 
   private Numbers2Words() {}
