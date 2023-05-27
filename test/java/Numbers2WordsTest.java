@@ -39,14 +39,14 @@ class Numbers2WordsTest {
   @ParameterizedTest(name = PARAMETERIZED_TEST_MESSAGE)
   @ArgumentsSource(MinimalProviders.class)
   void should_return_number_in_words(Long number, String words) {
-    Assertions.assertEquals(Numbers2Words.toWords(number), words);
+    Assertions.assertEquals(words, Numbers2Words.toWords(number));
   }
 
   @ParameterizedTest(name = PARAMETERIZED_TEST_MESSAGE)
   @ArgumentsSource(LanguajeExceptionProviders.class)
   void should_return_number_in_words_es_ES_exceptions(Long number,
       String words) {
-    Assertions.assertEquals(Numbers2Words.toWords(number), words);
+    Assertions.assertEquals(words, Numbers2Words.toWords(number));
   }
 
 }
