@@ -7,6 +7,9 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ArgumentsSource;
 import org.n2w.N2W;
 
+import locale.es_Es.fixtures.EsEsExceptionProviders;
+import locale.es_Es.fixtures.EsEsMinimalProviders;
+
 @TestMethodOrder(MethodOrderer.MethodName.class)
 class EsEsDictionaryTest {
 
