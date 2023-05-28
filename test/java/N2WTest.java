@@ -16,20 +16,12 @@ class N2WTest {
       "Number \"{0}\" toWords equivalence is \"{1}\"";
 
   @Test
-  void should_throw_NullPointerException_when_recives_null() {
-    Exception exception =
-        Assertions.assertThrows(NullPointerException.class, () -> {
-          N2W.toWords(null);
-        });
-
-    Assertions.assertEquals(NullPointerException.class, exception.getClass());
-  }
-
-  @Test
   void should_throw_IllegalArgumentException_when_recives_negative() {
+    N2W translator = new N2W();
+
     Exception exception =
         Assertions.assertThrows(IllegalArgumentException.class, () -> {
-          N2W.toWords(-1L);
+          translator.toWords(-1);
         });
 
     Assertions.assertEquals(IllegalArgumentException.class,
@@ -38,9 +30,11 @@ class N2WTest {
 
   @Test
   void should_throw_IllegalArgumentException_when_number_higer_max_value() {
+    N2W translator = new N2W();
+
     Exception exception =
         Assertions.assertThrows(IllegalArgumentException.class, () -> {
-          N2W.toWords(1000000000L);
+          translator.toWords(1000000000);
         });
 
     Assertions.assertEquals(IllegalArgumentException.class,
@@ -49,15 +43,19 @@ class N2WTest {
 
   @ParameterizedTest(name = PARAMETERIZED_TEST_MESSAGE)
   @ArgumentsSource(MinimalProviders.class)
-  void should_return_number_in_words(Long number, String words) {
-    Assertions.assertEquals(words, N2W.toWords(number));
+  void should_return_number_in_words(int number, String words) {
+    N2W translator = new N2W();
+
+    Assertions.assertEquals(words, translator.toWords(number));
   }
 
   @ParameterizedTest(name = PARAMETERIZED_TEST_MESSAGE)
   @ArgumentsSource(LanguajeExceptionProviders.class)
-  void should_return_number_in_words_es_ES_exceptions(Long number,
+  void should_return_number_in_words_es_ES_exceptions(int number,
       String words) {
-    Assertions.assertEquals(words, N2W.toWords(number));
+    N2W translator = new N2W();
+
+    Assertions.assertEquals(words, translator.toWords(number));
   }
 
 }

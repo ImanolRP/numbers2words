@@ -10,69 +10,69 @@ import java.util.stream.Stream;
 
 public class MinimalProviders implements ArgumentsProvider {
 
-  private static final HashMap<Long, String> provider =
-      new HashMap<Long, String>() {
+  private static final HashMap<Integer, String> provider =
+      new HashMap<Integer, String>() {
         private static final long serialVersionUID = 1037291664336460794L;
         {
-          put(0L, "cero");
-          put(1L, "uno");
-          put(9L, "nueve");
+          put(0, "cero");
+          put(1, "uno");
+          put(9, "nueve");
 
-          put(10L, "diez");
-          put(11L, "once");
-          put(19L, "diecinueve");
-          put(20L, "veinte");
-          put(21L, "veintiuno");
-          put(31L, "treinta y uno");
-          put(51L, "cincuenta y uno");
-          put(38L, "treinta y ocho");
-          put(47L, "cuarenta y siete");
-          put(99L, "noventa y nueve");
+          put(10, "diez");
+          put(11, "once");
+          put(19, "diecinueve");
+          put(20, "veinte");
+          put(21, "veintiuno");
+          put(31, "treinta y uno");
+          put(51, "cincuenta y uno");
+          put(38, "treinta y ocho");
+          put(47, "cuarenta y siete");
+          put(99, "noventa y nueve");
 
-          put(100L, "cien");
-          put(101L, "ciento uno");
-          put(109L, "ciento nueve");
-          put(110L, "ciento diez");
-          put(111L, "ciento once");
-          put(119L, "ciento diecinueve");
-          put(199L, "ciento noventa y nueve");
-          put(999L, "novecientos noventa y nueve");
+          put(100, "cien");
+          put(101, "ciento uno");
+          put(109, "ciento nueve");
+          put(110, "ciento diez");
+          put(111, "ciento once");
+          put(119, "ciento diecinueve");
+          put(199, "ciento noventa y nueve");
+          put(999, "novecientos noventa y nueve");
 
-          put(1000L, "mil");
-          put(1001L, "mil uno");
-          put(1011L, "mil once");
-          put(1021L, "mil veintiuno");
-          put(2019L, "dos mil diecinueve");
-          put(8048L, "ocho mil cuarenta y ocho");
-          put(9000L, "nueve mil");
-          put(9001L, "nueve mil uno");
-          put(9011L, "nueve mil once");
-          put(9021L, "nueve mil veintiuno");
-          put(9999L, "nueve mil novecientos noventa y nueve");
+          put(1000, "mil");
+          put(1001, "mil uno");
+          put(1011, "mil once");
+          put(1021, "mil veintiuno");
+          put(2019, "dos mil diecinueve");
+          put(8048, "ocho mil cuarenta y ocho");
+          put(9000, "nueve mil");
+          put(9001, "nueve mil uno");
+          put(9011, "nueve mil once");
+          put(9021, "nueve mil veintiuno");
+          put(9999, "nueve mil novecientos noventa y nueve");
 
-          put(11000L, "once mil");
-          put(11001L, "once mil uno");
-          put(11011L, "once mil once");
-          put(11021L, "once mil veintiuno");
-          put(12002L, "doce mil dos");
-          put(99000L, "noventa y nueve mil");
-          put(99001L, "noventa y nueve mil uno");
-          put(99011L, "noventa y nueve mil once");
-          put(99021L, "noventa y nueve mil veintiuno");
+          put(11000, "once mil");
+          put(11001, "once mil uno");
+          put(11011, "once mil once");
+          put(11021, "once mil veintiuno");
+          put(12002, "doce mil dos");
+          put(99000, "noventa y nueve mil");
+          put(99001, "noventa y nueve mil uno");
+          put(99011, "noventa y nueve mil once");
+          put(99021, "noventa y nueve mil veintiuno");
 
-          put(1000000L, "un millón");
-          put(1000001L, "un millón uno");
-          put(1000011L, "un millón once");
-          put(1000021L, "un millón veintiuno");
-          put(1010000L, "un millón diez mil");
-          put(1010001L, "un millón diez mil uno");
-          put(1021001L, "un millón veintiún mil uno");
-          put(1110000L, "un millón ciento diez mil");
-          put(2000040L, "dos millones cuarenta");
-          put(10000000L, "diez millones");
-          put(11000000L, "once millones");
-          put(21000000L, "veintiún millones");
-          put(999999999L,
+          put(1000000, "un millón");
+          put(1000001, "un millón uno");
+          put(1000011, "un millón once");
+          put(1000021, "un millón veintiuno");
+          put(1010000, "un millón diez mil");
+          put(1010001, "un millón diez mil uno");
+          put(1021001, "un millón veintiún mil uno");
+          put(1110000, "un millón ciento diez mil");
+          put(2000040, "dos millones cuarenta");
+          put(10000000, "diez millones");
+          put(11000000, "once millones");
+          put(21000000, "veintiún millones");
+          put(999999999,
               "novecientos noventa y nueve millones novecientos noventa y nueve mil novecientos noventa y nueve");
         }
       };

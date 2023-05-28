@@ -10,26 +10,26 @@ import java.util.stream.Stream;
 
 public class LanguajeExceptionProviders implements ArgumentsProvider {
 
-  private static final HashMap<Long, String> provider =
-      new HashMap<Long, String>() {
+  private static final HashMap<Integer, String> provider =
+      new HashMap<Integer, String>() {
         private static final long serialVersionUID = 1037291664336460794L;
         {
-          put(10L, "diez");
-          put(11L, "once");
-          put(12L, "doce");
-          put(13L, "trece");
-          put(14L, "catorce");
-          put(15L, "quince");
-          put(16L, "dieciséis");
-          put(17L, "diecisiete");
-          put(18L, "dieciocho");
-          put(19L, "diecinueve");
+          put(10, "diez");
+          put(11, "once");
+          put(12, "doce");
+          put(13, "trece");
+          put(14, "catorce");
+          put(15, "quince");
+          put(16, "dieciséis");
+          put(17, "diecisiete");
+          put(18, "dieciocho");
+          put(19, "diecinueve");
 
-          put(20L, "veinte");
-          put(22L, "veintidós");
-          put(23L, "veintitrés");
-          put(21000L, "veintiún mil");
-          put(21000000L, "veintiún millones");
+          put(20, "veinte");
+          put(22, "veintidós");
+          put(23, "veintitrés");
+          put(21000, "veintiún mil");
+          put(21000000, "veintiún millones");
         }
       };
 
