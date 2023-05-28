@@ -1,3 +1,3 @@
-# numbers2words
+# Numbers to Words (Java)
 
-This library will offer the posibility to translate numbers from numeric value to words.
+This library translate numbers from numeric value to words.
