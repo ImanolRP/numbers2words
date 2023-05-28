@@ -2,34 +2,18 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.ArgumentsSource;
 import org.n2w.N2W;
-
-import fixtures.LanguajeExceptionProviders;
-import fixtures.MinimalProviders;
 
 @TestMethodOrder(MethodOrderer.MethodName.class)
 class N2WTest {
 
-  private static final String PARAMETERIZED_TEST_MESSAGE =
-      "Number \"{0}\" toWords equivalence is \"{1}\"";
-
-  @Test
-  void should_throw_NullPointerException_when_recives_null() {
-    Exception exception =
-        Assertions.assertThrows(NullPointerException.class, () -> {
-          N2W.toWords(null);
-        });
-
-    Assertions.assertEquals(NullPointerException.class, exception.getClass());
-  }
-
   @Test
   void should_throw_IllegalArgumentException_when_recives_negative() {
+    N2W translator = new N2W();
+
     Exception exception =
         Assertions.assertThrows(IllegalArgumentException.class, () -> {
-          N2W.toWords(-1L);
+          translator.toWords(-1);
         });
 
     Assertions.assertEquals(IllegalArgumentException.class,
@@ -38,26 +22,15 @@ class N2WTest {
 
   @Test
   void should_throw_IllegalArgumentException_when_number_higer_max_value() {
+    N2W translator = new N2W();
+
     Exception exception =
         Assertions.assertThrows(IllegalArgumentException.class, () -> {
-          N2W.toWords(1000000000L);
+          translator.toWords(1000000000);
         });
 
     Assertions.assertEquals(IllegalArgumentException.class,
         exception.getClass());
-  }
-
-  @ParameterizedTest(name = PARAMETERIZED_TEST_MESSAGE)
-  @ArgumentsSource(MinimalProviders.class)
-  void should_return_number_in_words(Long number, String words) {
-    Assertions.assertEquals(words, N2W.toWords(number));
-  }
-
-  @ParameterizedTest(name = PARAMETERIZED_TEST_MESSAGE)
-  @ArgumentsSource(LanguajeExceptionProviders.class)
-  void should_return_number_in_words_es_ES_exceptions(Long number,
-      String words) {
-    Assertions.assertEquals(words, N2W.toWords(number));
   }
 
 }

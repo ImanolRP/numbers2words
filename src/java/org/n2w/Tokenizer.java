@@ -4,9 +4,9 @@ public class Tokenizer {
 
   private Tokenizer() {}
 
-  public static long[] get(Long number, int tokenLength) {
+  public static int[] get(int number, int tokenLength) {
     int index = 0;
-    long[] tokens = new long[3];
+    int[] tokens = new int[3];
     int base = (int) Math.pow(10, tokenLength);
     while (number > 0) {
       tokens[index] = (number % base);
