@@ -2,12 +2,12 @@ package org.n2w;
 
 import java.util.Objects;
 
-public class Numbers2Words {
+public class N2W {
 
   private static final long MIN_NUMBER = 0L;
   private static final long MAX_NUMBER = 999999999L;
 
-  private Numbers2Words() {}
+  private N2W() {}
 
   public static String toWords(Long number) {
 
